@@ -1,115 +1,50 @@
-    <!DOCTYPE html>
-    <html lang="sk">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Virtual Ukulele</title>
-        <link rel="stylesheet" href="cssjs/style.css">
-        
-    </head>
-    <body>
-        <div class="navbar">
-            <h1 id="nadpis">Virtual Ukulele</h1>
-            <ul class="nav">
-                <li><a class="menu" href="index.html">Home</a></li>
-                <li><a class="menu" href="html/onas.html">About us</a></li>
-                <li><a class="menu" href="html/galeria.html">Gallery</a></li>
-                <form class="wrapper">
-                    <input type="text" id="name" name="name" placeholder="Note">
-                    <button id="tlacitko" type="submit">Submit</button>
-                </form>
-            </ul>
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+  <body style="background-color: black;">
+    <div style="margin-top: 10%;" class="col-md-auto text-center">
+      <h1 style="color: white;margin-bottom: 2%;">Are you dumb?</h1>
+      <div>
+      <button type="button" id="hi" style="color: white;margin-right: 1%;width: 100px;height: 50px;" class="btn bg-danger">Yes</button>
+      <button type="button" id="but" style="color: white;position: relative;width: 100px;height: 50px;" class="btn bg-danger">No</button>
+      </div>
+      <h1 id="texty" style="padding-top:5%;font-size: 15em;color: white;"></h1>
+    </div>
+    
+    <script>
+      const pozicie = ["120px","-400px","210px","-100px","69px"];
+      let bug = document.getElementById('but');
+      let bugy = document.getElementById('hi');
 
-        <h2>Try to press +</h2>
-        <h3>Press Enter for mute</h3>
 
-            <div id="prvaCast"></div>
-            <div id="koniecstredu"></div>
-            <div id="okrajstredu"></div>
-            <div id="stred"></div>
-            <div id="krk"></div>
-            <div id="koniecUke"></div>
-            <div id="kobylka"></div>
-            <div id="dvaOtvory"></div>
-            <div id="drziakPrazcov"></div>
+      bugy.addEventListener("click", function( event ) {
+        document.getElementById("texty").innerHTML = "I KNEW IT!";
+      });
 
-            <div id="palicka12"></div>
-            <div id="palicka34"></div>
-            <div id="ladenie12"></div>
-            <div id="ladenie34"></div>
-            <div id="ladenie121"></div>
-            <div id="ladenie342"></div>
+      bug.addEventListener("mouseenter", whopa);
 
-            <div id="prazec1"></div>
-            <div id="prazec2"></div>
-            <div id="prazec3"></div>
-            <div id="prazec4"></div>
-            <div id="prazec5"></div>
-            <div id="prazec6"></div>
-            <div id="prazec7"></div>
-            <div id="prazec8"></div>
-            <div id="prazec9"></div>
+      function whopa()
+      {
+        let x = Math.floor(Math.random() * 4);
+        let y = Math.floor(Math.random() * 4);
 
-            <div id="gulka1"></div>
-            <div id="gulka2"></div>
+          but.style.left = pozicie[x];
+          but.style.bottom = pozicie[y];
+      }
 
-            <div id="strunaG"></div>
-            <div id="strunaC"></div>
-            <div id="strunaE"></div>
-            <div id="strunaA"></div>
-            <div id="strunaGpredl"></div>
-            <div id="strunaCpredl"></div>
-            <div id="strunaEpredl"></div>
-            <div id="strunaApredl"></div>
-            
-            <div id="p0"></div>
-            <div id="p1"></div>
-            <div id="p2"></div>
-            <div id="p3"></div>
-
-            <div id="p4"></div>
-            <div id="p5"></div>
-            <div id="p6"></div>
-            <div id="p7"></div>
-
-            <div id="p8"></div>
-            <div id="p9"></div>
-            <div id="p10"></div>
-            <div id="p11"></div>
-
-            <div id="p12"></div>
-            <div id="p13"></div>
-            <div id="p14"></div>
-            <div id="p15"></div>
-
-            <div id="p16"></div>
-            <div id="p17"></div>
-            <div id="p18"></div>
-            <div id="p19"></div>
-
-            <div id="p20"></div>
-            <div id="p21"></div>
-            <div id="p22"></div>
-            <div id="p23"></div>
-
-            <div id="p24"></div>
-            <div id="p25"></div>
-            <div id="p26"></div>
-            <div id="p27"></div>
-
-            <div id="p28"></div>
-            <div id="p29"></div>
-            <div id="p30"></div>
-            <div id="p31"></div>
-
-            <div id="p32"></div>
-            <div id="p33"></div>
-            <div id="p34"></div>
-            <div id="p35"></div>
-
-            <h1 id="napis">Name of the note: <span id="vypis">?</span></h1>
-        <script src="cssjs/script.js"></script>
-    </body>
-    </html>
+      bug.addEventListener("click", function( event ) {
+        document.getElementById("texty").innerHTML = "You are dumb anyway 🤭";
+      });
+    </script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>
