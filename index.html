@@ -12,32 +12,44 @@
     <div style="margin-top: 10%;" class="col-md-auto text-center">
       <h1 style="color: white;margin-bottom: 2%;">Are you dumb?</h1>
       <div>
-      <button type="button" id="hi" style="color: white;margin-right: 1%;width: 100px;height: 50px;" class="btn bg-danger">Yes</button>
-      <button type="button" id="but" style="color: white;position: relative;width: 100px;height: 50px;" class="btn bg-danger">No</button>
+      <button type="button" id="butYes" style="color: white;margin-right: 1%;width: 100px;height: 50px;" class="btn bg-danger">Yes</button>
+      <button type="button" id="butNo" style="color: white;position: relative;width: 100px;height: 50px;" class="btn bg-danger">No</button>
       </div>
-      <h1 id="texty" style="padding-top:5%;color: white;"></h1>
+      <h1 id="text" style="padding-top:5%;color: white;"></h1>
     </div>
     
     <script>
-      const pozicie = ["120px","-400px","210px","-100px","69px","-200px","800px"];
-      let bug = document.getElementById('but');
-      let bugy = document.getElementById('hi');
+      const pozicie = ["120px","-400px","210px","-100px","69px"];
+      let buttonNo = document.getElementById('butNo');
+      let buttonYes = document.getElementById('butYes');
+      let oldX=-1;
+      let oldY=-1;
 
-
-      bugy.addEventListener("click", function( event ) {
-        document.getElementById("texty").innerHTML = "I KNEW IT!";
+      buttonYes.addEventListener("click", function( event ) {
+        document.getElementById("text").innerHTML = "I KNEW IT!";
       });
 
-      bug.addEventListener("mouseenter", whopa);
+      buttonNo.addEventListener("mouseenter", move);
 
-      function whopa()
+      function move()
       {
-        let x = Math.floor(Math.random() * 6);
-        let y = Math.floor(Math.random() * 6);
+        let x = Math.floor(Math.random() * 4);
+        let y = Math.floor(Math.random() * 4);
 
-          but.style.left = pozicie[x];
-          but.style.bottom = pozicie[y];
+        if(oldX == x && oldY == y)
+        {
+          move();
+        }
+        else
+        {
+        oldX = x;
+        oldY = y;
+
+        butNo.style.left = pozicie[x];
+        butNo.style.bottom = pozicie[y];
+        }
       }
+      
     </script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
